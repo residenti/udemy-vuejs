@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>親のいいね数: {{ count }}</p>
+    <HelloWorld 
+      :count="count"
+      @my-click="incrementCount"
+      @console-log="consoleLog"
+    />
   </div>
 </template>
 
@@ -12,6 +17,19 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      count: 1
+    }
+  },
+  methods: {
+    incrementCount(value) {
+      this.count = value
+    },
+    consoleLog() {
+      console.log("called!: 小コンポーネントから呼ばれたよ！")
+    }
   }
 }
 </script>
