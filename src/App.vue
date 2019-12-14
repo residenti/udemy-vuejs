@@ -7,20 +7,29 @@
       @my-click="incrementCount"
       @console-log="consoleLog"
     />
+
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <component :is="currentComponent"></component>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Home,
+    About
   },
   data() {
     return {
-      count: 1
+      count: 1,
+      currentComponent: "Home"
     }
   },
   methods: {
