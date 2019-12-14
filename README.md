@@ -1,5 +1,7 @@
 # udemy-vuejs
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a91435bf-7d2e-4de2-8514-9c7abe8b6498/deploy-status)](https://app.netlify.com/sites/agitated-mcclintock-35a061/deploys)
+
 ## Project setup
 ```
 npm install
