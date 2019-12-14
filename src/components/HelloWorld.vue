@@ -24,6 +24,38 @@ export default {
     consoleLog() {
       this.$emit('console-log')
     }
+  },
+
+  beforeCreate() {
+    console.log("beforeCreate!! in HelloWorld")
+  },
+  created() {
+    console.log("created!! in HelloWorld")
+  },
+  beforeMount() {
+    console.log("beforeMount!! in HelloWorld")
+  },
+  mounted() {
+    console.log("mounted!! in HelloWorld")
+  },
+  beforeUpdate() {
+    console.log("beforeUpdate!! in HelloWorld")
+  },
+  updated() {
+    console.log("updated!! in HelloWorld")
+  },
+  beforeDestroy() {
+    console.log("beforeDestroy!! in HelloWorld")
+  },
+  destroyed() {
+    console.log("destroyed!! in HelloWorld")
+  },
+
+  activated() {
+    console.log("activated!! in HelloWorld")
+  },
+  deactivated() {
+    console.log("deactivated!! in HelloWorld")
   }
 }
 </script>

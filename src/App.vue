@@ -2,11 +2,16 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <p>親のいいね数: {{ count }}</p>
-    <HelloWorld 
-      :count="count"
-      @my-click="incrementCount"
-      @console-log="consoleLog"
-    />
+    <keep-alive>
+      <HelloWorld
+        :count="count"
+        @my-click="incrementCount"
+        @console-log="consoleLog"
+        v-if="componentName === 'HelloWorld'"
+      />
+    </keep-alive>
+    <button @click="componentName = 'HelloWorld'">表示</button>
+    <button @click="componentName = ''">非表示</button>
 
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
@@ -45,7 +50,8 @@ export default {
       currentComponent: "Home",
       eventData: {
         title: "タイトル"
-      }
+      },
+      componentName: 'HelloWorld'
     }
   },
   methods: {
