@@ -21,13 +21,13 @@
 
     <div>
       <h2>イベントフォーム</h2>
-      <label for="title">タイトル</label>
+      <label for="maxNumber">最大値</label>
       <input
-        id="title"
-        type="text"
-        v-model.lazy="eventData.title"
+        id="maxNumber"
+        type="number"
+        v-model.number="eventData.number"
       >
-      <p>{{ eventData.title }}</p>
+      <p>{{ typeof eventData.number }}</p>
     </div>
   </div>
 </template>
@@ -49,7 +49,8 @@ export default {
       count: 1,
       currentComponent: "Home",
       eventData: {
-        title: "タイトル"
+        title: "タイトル",
+        number: 0
       },
       componentName: 'HelloWorld'
     }
