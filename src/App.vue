@@ -29,6 +29,17 @@
       >
       <p>{{ typeof eventData.number }}</p>
     </div>
+
+    <div>
+      <button @click="show = !show">切り替え</button>
+      <transition name="fade">
+        <p v-if="show">hello</p>
+      </transition>
+      <transition name="slide">
+        <p v-if="show">bye</p>
+      </transition>
+    </div>
+
   </div>
 </template>
 
@@ -52,7 +63,8 @@ export default {
         title: "タイトル",
         number: 0
       },
-      componentName: 'HelloWorld'
+      componentName: 'HelloWorld',
+      show: true
     }
   },
   methods: {
@@ -66,7 +78,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -74,5 +86,45 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter {
+  /* 初期の状態 */
+  opacity: 0;
+}
+.fade-enter-active {
+  /* 表示される時のトランザクションの状態 */
+  transition: opacity 0.5s;
+}
+.fade-enter-to {
+  /* 表示される時の最後の状態 */
+  opacity: 1;
+}
+.fade-leave {
+  /* 消える時の最初の状態 */
+  opacity: 1;
+}
+.fade-leave-active {
+  /* 消える時のトランザクションの状態 */
+  transition: opacity 0.5s;
+}
+.fade-leave-to {
+  /* 消える時の最後の状態 */
+  opacity: 0;
+}
+
+.slide-enter-active {
+  animation: slide-in 0.5s;
+}
+.slide-leave-active {
+  animation: slide-in 0.5s reverse;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 </style>
