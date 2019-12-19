@@ -32,12 +32,16 @@
 
     <div>
       <button @click="show = !show">切り替え</button>
-      <transition name="fade">
+      <transition
+        name="fade"
+        appear
+      >
         <p v-if="show">hello</p>
       </transition>
       <transition
         name="slide"
         type="animation"
+        appear
       >
         <p v-if="show">bye</p>
       </transition>
