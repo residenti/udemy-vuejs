@@ -15,9 +15,11 @@
 
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
-    <keep-alive>
-      <component :is="currentComponent"></component>
-    </keep-alive>
+    <transition name="fade" mode='out-in'>
+      <keep-alive>
+        <component :is="currentComponent"></component>
+      </keep-alive>
+    </transition>
 
     <div>
       <h2>イベントフォーム</h2>
@@ -95,6 +97,32 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.fade-enter {
+  /* 初期の状態 */
+  opacity: 0;
+}
+.fade-enter-active {
+  /* 表示される時のトランザクションの状態 */
+  transition: opacity 0.5s;
+}
+.fade-enter-to {
+  /* 表示される時の最後の状態 */
+  opacity: 1;
+}
+.fade-leave {
+  /* 消える時の最初の状態 */
+  opacity: 1;
+}
+.fade-leave-active {
+  /* 消える時のトランザクションの状態 */
+  transition: opacity 0.5s;
+}
+.fade-leave-to {
+  /* 消える時の最後の状態 */
+  opacity: 0;
+}
+
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
