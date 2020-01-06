@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <h2>親子間のデータの受け渡し & コンポーネントの表示・非表示の切り替え</h2>
     <p>親のいいね数: {{ count }}</p>
     <keep-alive>
       <HelloWorld
@@ -13,6 +14,8 @@
     <button @click="componentName = 'HelloWorld'">表示</button>
     <button @click="componentName = ''">非表示</button>
 
+    <hr>
+    <h2>transition コンポーネントによるアニメーション</h2>
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
     <transition name="fade" mode='out-in'>
@@ -21,6 +24,7 @@
       </keep-alive>
     </transition>
 
+    <hr>
     <div>
       <h2>イベントフォーム</h2>
       <label for="maxNumber">最大値</label>
@@ -32,7 +36,9 @@
       <p>{{ typeof eventData.number }}</p>
     </div>
 
+    <hr>
     <div>
+      <h2>transition コンポーネントによるアニメーション2</h2>
       <button @click="show = !show">切り替え</button>
       <transition
         enter-active-class="animated bounce"
@@ -50,7 +56,9 @@
       </transition>
     </div>
 
+    <hr>
     <div>
+      <h2>vue router によるコンポーネントの切り替え</h2>
       <nav>
         <router-link to="/" class="link" active-class="link--active" exact>Home</router-link>
         <router-link to="/users" class="link" active-class="link--active" exact>Users</router-link>
