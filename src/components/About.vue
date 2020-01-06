@@ -1,5 +1,8 @@
 <template>
-  <p>About</p>
+  <div>
+    <p>About</p>
+    <p>id: {{ $route.params.id }}</p>
+  </div>
 </template>
 
 <script>
