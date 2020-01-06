@@ -5,11 +5,11 @@
     router link ではコンポーネントが再利用されるので、起動しないライフサイクルフックがあることに注意。<br>
     watch プロパティで $route を監視するのが良さそう。変更前後の $route の値も取得できる。
     </p>
-    <router-link to="/users/1">ユーザー1</router-link>
-    <router-link to="/users/2">ユーザー2</router-link>
+    <router-link to="/users/1" class="link">ユーザー1</router-link>
+    <router-link to="/users/2" class="link">ユーザー2</router-link>
     <p>id: {{ id }}</p>
-    <router-link :to="'/users/' + (Number(id) + 1) + '/profile'">次のユーザーのプロフィール</router-link>
-    <router-link :to="'/users/' + (Number(id) + 1) + '/posts'">次のユーザーの投稿</router-link>
+    <router-link :to="'/users/' + (Number(id) + 1) + '/posts'" class="link">次のユーザーの投稿</router-link>
+    <router-link :to="{ name: 'user-id-profile', params: { id: Number(id) + 1 } }" class="link">次のユーザーのプロフィール</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -58,3 +58,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.link {
+  margin-right: 10px;
+}
+</style>
