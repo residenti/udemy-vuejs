@@ -27,5 +27,17 @@ export default new Router({
       path: "*",
       redirect: "/"
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+        offset: { x: 0, y: 100 }
+      }
+    } else if (savedPosition) {
+      return savedPosition
+    }
+
+    // return { x: 0, y: 500 }
+  }
 })
