@@ -3,12 +3,14 @@
     <p>About</p>
     <router-link to="/about/1">アバウト1</router-link>
     <router-link to="/about/2">アバウト2</router-link>
-    <p>id: {{ $route.params.id }}</p>
+    <p>id: {{ id }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["id"],
+
   watch: {
     $route(oldVal, newVal) {
       console.log("oldVal", oldVal)
