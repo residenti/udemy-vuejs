@@ -51,6 +51,10 @@
     </div>
 
     <div>
+      <nav>
+        <router-link to="/" class="link">Home</router-link>
+        <router-link to="/about" class="link">About</router-link>
+      </nav>
       <router-view></router-view>
     </div>
 
@@ -146,5 +150,8 @@ export default {
   to {
     transform: translateX(0px);
   }
+}
+.link {
+  margin-right: 10px;
 }
 </style>
