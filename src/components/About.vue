@@ -7,35 +7,35 @@
 <script>
 export default {
   beforeCreate() {
-    console.log("beforeCreate!! in About")
+    console.log("[About.vue] beforeCreate!!")
   },
   created() {
-    console.log("created!! in About")
+    console.log("[About.vue] created!!")
   },
   beforeMount() {
-    console.log("beforeMount!! in About")
+    console.log("[About.vue] beforeMount!!")
   },
   mounted() {
-    console.log("mounted!! in About")
+    console.log("[About.vue] mounted!!")
   },
   beforeUpdate() {
-    console.log("beforeUpdate!! in About")
+    console.log("[About.vue] beforeUpdate!!")
   },
   updated() {
-    console.log("updated!! in About")
+    console.log("[About.vue] updated!!")
   },
   beforeDestroy() {
-    console.log("beforeDestroy!! in About")
+    console.log("[About.vue] beforeDestroy!!")
   },
   destroyed() {
-    console.log("destroyed!! in About")
+    console.log("[About.vue] destroyed!!")
   },
 
   activated() {
-    console.log("activated!! in About")
+    console.log("[About.vue] activated!!")
   },
   deactivated() {
-    console.log("deactivated!! in About")
+    console.log("[About.vue] deactivated!!")
   }
 }
 </script>

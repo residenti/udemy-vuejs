@@ -27,35 +27,35 @@ export default {
   },
 
   beforeCreate() {
-    console.log("beforeCreate!! in HelloWorld")
+    console.log("[HelloWorld.vue] beforeCreate!!")
   },
   created() {
-    console.log("created!! in HelloWorld")
+    console.log("[HelloWorld.vue] created!!")
   },
   beforeMount() {
-    console.log("beforeMount!! in HelloWorld")
+    console.log("[HelloWorld.vue] beforeMount!!")
   },
   mounted() {
-    console.log("mounted!! in HelloWorld")
+    console.log("[HelloWorld.vue] mounted!!")
   },
   beforeUpdate() {
-    console.log("beforeUpdate!! in HelloWorld")
+    console.log("[HelloWorld.vue] beforeUpdate!!")
   },
   updated() {
-    console.log("updated!! in HelloWorld")
+    console.log("[HelloWorld.vue] updated!!")
   },
   beforeDestroy() {
-    console.log("beforeDestroy!! in HelloWorld")
+    console.log("[HelloWorld.vue] beforeDestroy!!")
   },
   destroyed() {
-    console.log("destroyed!! in HelloWorld")
+    console.log("[HelloWorld.vue] destroyed!!")
   },
 
   activated() {
-    console.log("activated!! in HelloWorld")
+    console.log("[HelloWorld.vue] activated!!")
   },
   deactivated() {
-    console.log("deactivated!! in HelloWorld")
+    console.log("[HelloWorld.vue] deactivated!!")
   }
 }
 </script>

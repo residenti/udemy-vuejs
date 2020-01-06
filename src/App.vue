@@ -100,7 +100,7 @@ export default {
       this.count = value
     },
     consoleLog() {
-      console.log("called!: 小コンポーネントから呼ばれたよ！")
+      console.log("[App.vue] called!: 小コンポーネントから呼ばれたよ！")
     }
   }
 }

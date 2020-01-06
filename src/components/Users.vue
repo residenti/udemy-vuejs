@@ -26,8 +26,8 @@ export default {
 
   watch: {
     $route(oldVal, newVal) {
-      console.log("oldVal", oldVal)
-      console.log("newVal", newVal)
+      console.log("[Users.vue] oldVal", oldVal)
+      console.log("[Users.vue] newVal", newVal)
     }
   },
 
