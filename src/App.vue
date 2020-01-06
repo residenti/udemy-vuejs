@@ -61,7 +61,7 @@
       <h2>vue router によるコンポーネントの切り替え</h2>
       <nav>
         <router-link to="/" class="link" active-class="link--active" exact>Home</router-link>
-        <router-link to="/users" class="link" active-class="link--active" exact>Users</router-link>
+        <router-link to="/users/1" class="link" active-class="link--active" exact>Users</router-link>
       </nav>
       <router-view></router-view>
     </div>
