@@ -4,6 +4,7 @@
     <router-link to="/about/1">アバウト1</router-link>
     <router-link to="/about/2">アバウト2</router-link>
     <p>id: {{ id }}</p>
+    <router-view></router-view>
   </div>
 </template>
 
