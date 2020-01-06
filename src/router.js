@@ -12,7 +12,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      beforeEnter(to, from, next) {
+        next()
+      }
     },
     {
       path: '/users/:id',
