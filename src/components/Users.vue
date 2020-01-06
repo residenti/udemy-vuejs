@@ -8,8 +8,14 @@
     <router-link to="/users/1" class="link">ユーザー1</router-link>
     <router-link to="/users/2" class="link">ユーザー2</router-link>
     <p>id: {{ id }}</p>
-    <router-link :to="'/users/' + (Number(id) + 1) + '/posts'" class="link">次のユーザーの投稿</router-link>
-    <router-link :to="{ name: 'user-id-profile', params: { id: Number(id) + 1 }, query: { lang: 'ja' } }" class="link">次のユーザーのプロフィール</router-link>
+    <router-link
+      :to="'/users/' + (Number(id) + 1) + '/posts'"
+      class="link"
+    >次のユーザーの投稿</router-link>
+    <router-link
+      :to="{ name: 'user-id-profile', params: { id: Number(id) + 1 }, query: { lang: 'ja' }, hash: '#passing-data' }"
+      class="link"
+    >次のユーザーのプロフィール</router-link>
     <router-view></router-view>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h2>親子間のデータの受け渡し & コンポーネントの表示・非表示の切り替え</h2>
+    <h2 id="passing-data">親子間のデータの受け渡し & コンポーネントの表示・非表示の切り替え</h2>
     <p>親のいいね数: {{ count }}</p>
     <keep-alive>
       <HelloWorld
