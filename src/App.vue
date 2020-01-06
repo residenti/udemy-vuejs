@@ -53,7 +53,7 @@
     <div>
       <nav>
         <router-link to="/" class="link" active-class="link--active" exact>Home</router-link>
-        <router-link to="/about" class="link" active-class="link--active" exact>About</router-link>
+        <router-link to="/users" class="link" active-class="link--active" exact>Users</router-link>
       </nav>
       <router-view></router-view>
     </div>

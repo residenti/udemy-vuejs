@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/Home.vue'
-import About from './components/About.vue'
-import AboutOne from './components/AboutOne.vue'
-import AboutTwo from './components/AboutTwo.vue'
+import Users from './components/Users.vue'
+import UsersProfile from './components/UsersProfile.vue'
+import UsersPosts from './components/UsersPosts.vue'
 
 Vue.use(Router)
 
@@ -15,12 +15,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about/:id',
-      component: About,
+      path: '/users/:id',
+      component: Users,
       props: true,
       children: [
-        { path: 'one', component: AboutOne },
-        { path: 'two', component: AboutTwo }
+        { path: 'profile', component: UsersProfile },
+        { path: 'posts', component: UsersPosts }
       ]
     }
   ]

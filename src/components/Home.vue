@@ -1,15 +1,15 @@
 <template>
   <div>
     <p>Home</p>
-    <button @click="toAbout">Aboutページにいく.</button>
+    <button @click="toUsers">Usersページにいく.</button>
   </div>
 </template>
 
 <script>
   export default {
     methods: {
-      toAbout() {
-        this.$router.push('about')
+      toUsers() {
+        this.$router.push('users')
       }
     }
   }
