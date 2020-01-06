@@ -9,7 +9,7 @@
     <router-link to="/users/2" class="link">ユーザー2</router-link>
     <p>id: {{ id }}</p>
     <router-link :to="'/users/' + (Number(id) + 1) + '/posts'" class="link">次のユーザーの投稿</router-link>
-    <router-link :to="{ name: 'user-id-profile', params: { id: Number(id) + 1 } }" class="link">次のユーザーのプロフィール</router-link>
+    <router-link :to="{ name: 'user-id-profile', params: { id: Number(id) + 1 }, query: { lang: 'ja' } }" class="link">次のユーザーのプロフィール</router-link>
     <router-view></router-view>
   </div>
 </template>
