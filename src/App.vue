@@ -63,7 +63,9 @@
         <router-link to="/" class="link" active-class="link--active" exact>Home</router-link>
         <router-link to="/users/1" class="link" active-class="link--active" exact>Users</router-link>
       </nav>
-      <router-view></router-view>
+      <transition name="fade" mode='out-in'>
+        <router-view></router-view>
+      </transition>
     </div>
 
   </div>

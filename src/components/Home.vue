@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Home</p>
+    <h2>Home</h2>
     <button @click="toUsers">Usersページにいく.</button>
   </div>
 </template>
