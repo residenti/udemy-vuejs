@@ -22,6 +22,10 @@ export default new Router({
         { path: 'profile', component: UsersProfile, name: "user-id-profile" },
         { path: 'posts', component: UsersPosts }
       ]
+    },
+    {
+      path: "*",
+      redirect: "/"
     }
   ]
 })
