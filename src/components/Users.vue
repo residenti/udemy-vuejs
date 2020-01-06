@@ -31,36 +31,54 @@ export default {
     }
   },
 
+  beforeRouteEnter(to, from, next) {
+    console.log("[Users.vue] beforeRouteEnter")
+    // vm インスタンスが生成される前に実行されるため this が使えないことに注意.
+    // ただし次のように書くことで非同期処理的に vm を参照することができる.
+    next(vm => {
+      console.log("[Users.vue] beforeRouteEnter > vm.id", vm.id)
+    })
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("[Users.vue] beforeRouteUpdate")
+    next()
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log("[Users.vue] beforeRouteLeave")
+    const isLeave = window.confirm("本当にこのページを離れますか?")
+    next(isLeave)
+  },
+
   beforeCreate() {
-    console.log("beforeCreate!! in users")
+    console.log("[Users.vue] beforeCreate!! in users")
   },
   created() {
-    console.log("created!! in users")
+    console.log("[Users.vue] created!! in users")
   },
   beforeMount() {
-    console.log("beforeMount!! in users")
+    console.log("[Users.vue] beforeMount!! in users")
   },
   mounted() {
-    console.log("mounted!! in users")
+    console.log("[Users.vue] mounted!! in users")
   },
   beforeUpdate() {
-    console.log("beforeUpdate!! in users")
+    console.log("[Users.vue] beforeUpdate!! in users")
   },
   updated() {
-    console.log("updated!! in users")
+    console.log("[Users.vue] updated!! in users")
   },
   beforeDestroy() {
-    console.log("beforeDestroy!! in users")
+    console.log("[Users.vue] beforeDestroy!! in users")
   },
   destroyed() {
-    console.log("destroyed!! in users")
+    console.log("[Users.vue] destroyed!! in users")
   },
 
   activated() {
-    console.log("activated!! in users")
+    console.log("[Users.vue] activated!! in users")
   },
   deactivated() {
-    console.log("deactivated!! in users")
+    console.log("[Users.vue] deactivated!! in users")
   }
 }
 </script>
