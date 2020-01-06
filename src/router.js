@@ -1,9 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './components/Home.vue'
-import Users from './components/Users.vue'
-import UsersProfile from './components/UsersProfile.vue'
-import UsersPosts from './components/UsersPosts.vue'
+// import Home from './components/Home.vue'
+// import Users from './components/Users.vue'
+// import UsersProfile from './components/UsersProfile.vue'
+// import UsersPosts from './components/UsersPosts.vue'
+
+// 遅延ローディング (webpack 動的 import).
+// 必要になるまでファイルを取得しない.
+// 実際はインターネットに通信していない暇な時に取得している. prefetch
+const Home = () => import('./components/Home.vue')
+const Users = () => import('./components/Users.vue')
+const UsersProfile = () => import('./components/UsersProfile.vue')
+const UsersPosts = () => import('./components/UsersPosts.vue')
 
 Vue.use(Router)
 
