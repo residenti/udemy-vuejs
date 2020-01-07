@@ -11,23 +11,32 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      doubleCount() {
-        return this.$store.getters.doubleCount
-      },
-      tripleCount() {
-        return this.$store.getters.tripleCount
-      }
-    },
+import { mapGetters } from "vuex"
 
-    methods: {
-      toUsers() {
-        this.$router.push({
-          name: 'user-id-profile',
-          params: { id: 1 }
-        })
-      }
+export default {
+  // 1. vuex で定義した getters を取得する書き方.
+  // computed: {
+  //   doubleCount() {
+  //     return this.$store.getters.doubleCount
+  //   },
+  //   tripleCount() {
+  //     return this.$store.getters.tripleCount
+  //   }
+  // },
+  // 2. mapGetters を用いた書き方.
+  //computed: mapGetters(["doubleCount", "tripleCount"]),
+  // ES6 のスプレッド演算子(...)を用いて mapGetters(Object) を copumputed オブジェクトにマージする書き方.
+  computed: {
+    ...mapGetters(["doubleCount", "tripleCount"])
+  },
+
+  methods: {
+    toUsers() {
+      this.$router.push({
+        name: 'user-id-profile',
+        params: { id: 1 }
+      })
     }
   }
+}
 </script>
