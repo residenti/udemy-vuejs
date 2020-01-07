@@ -3,16 +3,17 @@
     <p>About</p>
 
     <p>Vuex で管理されている count の値を変化させる</p>
-    <button @click="increment(1)">+1</button>
-    <button @click="decrement(1)">-1</button>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex"
+// import { mapMutations } from "vuex"
 
 export default {
-  // 1. よく見る書き方.
+  // 1. mutations に定義した処理を呼び出して state の値を変更する.
+  // オーソドックスな書き方.
   // methods: {
   //   increment() {
   //     this.$store.commit("increment", 1)
@@ -24,8 +25,16 @@ export default {
   // 2. mapMutations を用いた書き方.
   // 増減分の値(1)は、@click の呼び出し側に increment(1) のように書く.
   // ES6 のスプレッド演算子(...)を用いて mapMutations(Object) を copumputed オブジェクトにマージする書き方.
+  // methods: {
+  //   ...mapMutations(["increment", "decrement"])
+  // },
   methods: {
-    ...mapMutations(["increment", "decrement"])
+    increment() {
+      this.$store.dispatch("increment", 1)
+    },
+    decrement() {
+      this.$store.dispatch("decrement", 1)
+    }
   },
 
   beforeCreate() {
