@@ -1,11 +1,24 @@
 <template>
   <div>
     <p>About</p>
+
+    <p>Vuex で管理されている count の値を変化させる</p>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    increment() {
+      this.$store.state.count++
+    },
+    decrement() {
+      this.$store.state.count--
+    }
+  },
+
   beforeCreate() {
     console.log("[About.vue] beforeCreate!!")
   },
