@@ -7,6 +7,25 @@
     count * 2 = {{ doubleCount }}<br>
     count * 3 = {{ tripleCount }}
     </p>
+    <p>v-model を Vuex で使う.</p>
+    <!--
+      v-model を Vuex で使う方法その1
+      :value と @input に分解する.
+    <input
+      type="text"
+      :value="message"
+      @input="updateMessage"
+    >
+    -->
+    <!--
+      v-model を Vuex で使う方法その2
+      setter を用いる.
+    -->
+    <input
+      type="text"
+      v-model="message"
+    >
+    <p> {{ message }} </p>
   </div>
 </template>
 
@@ -27,10 +46,24 @@ export default {
   //computed: mapGetters(["doubleCount", "tripleCount"]),
   // ES6 のスプレッド演算子(...)を用いて mapGetters(Object) を copumputed オブジェクトにマージする書き方.
   computed: {
-    ...mapGetters(["doubleCount", "tripleCount"])
+    ...mapGetters(["doubleCount", "tripleCount"]),
+    // message() {
+    //   return this.$store.getters.message
+    // }
+    message: {
+      get() {
+        return this.$store.getters.message
+      },
+      set(value) {
+        this.$store.dispatch("updateMessage", value)
+      }
+    }
   },
 
   methods: {
+    // updateMessage(event) {
+    //   this.$store.dispatch("updateMessage", event.target.value)
+    // },
     toUsers() {
       this.$router.push({
         name: 'user-id-profile',

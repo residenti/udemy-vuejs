@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 
   state: {
-    count: 2
+    count: 2,
+    message: ''
   },
 
   // データ(state)の変更を行う処理は必ず mutations に定義する.
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     decrement(state, number) {
       state.count -= number
+    },
+    updateMessage(state, newMessage) {
+      state.message = newMessage
     }
   },
 
@@ -33,12 +37,16 @@ export default new Vuex.Store({
     },
     decrement({ commit }, number) {
       commit('decrement', number)
+    },
+    updateMessage({ commit }, newMessage) {
+      commit('updateMessage', newMessage)
     }
   },
 
   getters: {
     doubleCount: state => state.count * 2,
-    tripleCount: state => state.count * 3
+    tripleCount: state => state.count * 3,
+    message: state => state.message
   }
 
 })
