@@ -17,33 +17,33 @@ export default {
   // オーソドックスな書き方.
   // methods: {
   //   increment() {
-  //     this.$store.commit("increment", 1)
+  //     this.$store.commit("count/increment", 1)
   //   },
   //   decrement() {
-  //     this.$store.commit("decrement", 1)
+  //     this.$store.commit("count/decrement", 1)
   //   }
   // },
   // 1-2. mapMutations を用いた書き方.
   // 増減分の値(1)は、@click の呼び出し側に increment(1) のように書く.
   // ES6 のスプレッド演算子(...)を用いて mapMutations(Object) を copumputed オブジェクトにマージする書き方.
   // methods: {
-  //   ...mapMutations(["increment", "decrement"])
+  //   ...mapMutations("count", ["increment", "decrement"])
   // },
   // 2-1. actions に定義した処理を呼び出して state の値を変更する.
   // オーソドックスな書き方.
   // methods: {
   //   increment() {
-  //     this.$store.dispatch("increment", 1)
+  //     this.$store.dispatch("count/increment", 1)
   //   },
   //   decrement() {
-  //     this.$store.dispatch("decrement", 1)
+  //     this.$store.dispatch("count/decrement", 1)
   //   }
   // },
   // 2-2 mapActionsを用いた書き方.
   // 増減分の値(1)は、@click の呼び出し側に increment(1) のように書く.
   // ES6 のスプレッド演算子(...)を用いて mapMutations(Object) を copumputed オブジェクトにマージする書き方.
   methods: {
-    ...mapActions(["increment", "decrement"])
+    ...mapActions("count", ["increment", "decrement"])
   },
 
   beforeCreate() {

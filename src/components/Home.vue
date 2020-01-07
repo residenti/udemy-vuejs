@@ -36,26 +36,26 @@ export default {
   // 1. vuex で定義した getters を取得する書き方.
   // computed: {
   //   doubleCount() {
-  //     return this.$store.getters.doubleCount
+  //     return this.$store.getters["message/doubleCount"]
   //   },
   //   tripleCount() {
-  //     return this.$store.getters.tripleCount
+  //     return this.$store.getters["message/tripleCount"]
   //   }
   // },
   // 2. mapGetters を用いた書き方.
-  //computed: mapGetters(["doubleCount", "tripleCount"]),
+  //computed: mapGetters("count", ["doubleCount", "tripleCount"]),
   // ES6 のスプレッド演算子(...)を用いて mapGetters(Object) を copumputed オブジェクトにマージする書き方.
   computed: {
-    ...mapGetters(["doubleCount", "tripleCount"]),
+    ...mapGetters("count", ["doubleCount", "tripleCount"]),
     // message() {
-    //   return this.$store.getters.message
+    //   return this.$store.getters["message/message"]
     // }
     message: {
       get() {
-        return this.$store.getters.message
+        return this.$store.getters["message/message"]
       },
       set(value) {
-        this.$store.dispatch("updateMessage", value)
+        this.$store.dispatch("message/updateMessage", value)
       }
     }
   },
